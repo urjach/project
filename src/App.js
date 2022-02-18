@@ -9,7 +9,7 @@ export default function App() {
   ];
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1>My Todo List</h1>
       <Todolist todos={todos} />
     </div>
   );

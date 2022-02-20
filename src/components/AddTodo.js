@@ -17,7 +17,7 @@ export default function AddTodo({ setTodos }) {
   return (
     <form onSubmit={handleAddTodo}>
       <input name="addTodo" placeholder="Add todo" ref={inputRef} />
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Now</button>
     </form>
   );
 }

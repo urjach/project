@@ -1,4 +1,6 @@
 import React from "react";
+import DeleteTodo from "./DeleteTodo";
+
 export default function Todolist({ todos, setTodos }) {
   function handleToggleTodo(todo) {
     // confused by this code? Here's what it says:
@@ -17,19 +19,25 @@ export default function Todolist({ todos, setTodos }) {
     );
     setTodos(updatedTodos);
   }
+
+  if (!todos.length) {
+    return <p>No todos left!</p>;
+  }
+
   //console.log(props);
   return (
     <div>
       <ul>
         {todos.map((todo) => (
           <li
-            onClick={() => handleToggleTodo(todo)}
+            onDoubleClick={() => handleToggleTodo(todo)}
             style={{
               textDecoration: todo.done ? "line-through" : "",
             }}
             key={todo.id}
           >
             {todo.text}
+            <DeleteTodo todo={todo} setTodos={setTodos} />
           </li>
         ))}
       </ul>
